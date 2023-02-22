@@ -9,29 +9,28 @@ export interface ITokenVisualizerProps {
 const TokenVisualizer = ({ imageSrc } : ITokenVisualizerProps) => {
     const [showModal, setShowModal] = useState(false)
 
-    const handleImageClick = () => {
-        setShowModal(true)
-    }
-
-    const handleModalClose = () => {
+    const closeModal = () => {
         setShowModal(false)
     }
 
     return (
-        <Box align="center" pad="medium" className={styles.visualizer}>
+        <Box align="center" margin='medium' className={styles.visualizer}>
             {imageSrc && (
                 <>
-                    <Image src={imageSrc} fit="contain" onClick={handleImageClick} />
+                    <Image  src={imageSrc} fit="contain" onClick={() => setShowModal(true)} />
                     {showModal && (
                         <Layer
-                            onEsc={handleModalClose}
-                            onClickOutside={handleModalClose}
-                            animation={true}
+                            onEsc={closeModal}
+                            onClickOutside={closeModal}
+                            animation='slide'
                             responsive={false}
-                            style={{ cursor: 'zoomOut' }}
                         >
-                            <Box align="center" width='large' height='large'>
-                                <Image src={imageSrc} fit="cover" />
+                            <Box
+                                align="center"
+                                width='large'
+                                height='large'
+                            >
+                                <Image src={imageSrc} fit="cover" className={styles.zoomVisualizer} onClick={(closeModal)}/>
                             </Box>
                         </Layer>
                     )}
