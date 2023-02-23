@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import TokenDetails from './tokenDetails'
+import TokenPage from './token'
 
 export default function Home() {
     return (
@@ -8,7 +8,7 @@ export default function Home() {
                 <title>Avascan App</title>
             </Head>
             <main>
-                <TokenDetails />
+                <TokenPage />
             </main>
         </>
     )

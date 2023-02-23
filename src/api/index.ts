@@ -1,4 +1,4 @@
-import getTokenAPI from './getTokenAPI'
+import getTokenAPI from "./getTokenAPI"
 
 const api = {
     getTokenAPI
