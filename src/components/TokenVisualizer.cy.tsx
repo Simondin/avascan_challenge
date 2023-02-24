@@ -36,3 +36,4 @@ describe('TokenVisualizer component', () => {
         cy.get('[data-cy=token-visualizer-layer]').should('not.exist');
     });
 });
+export {}

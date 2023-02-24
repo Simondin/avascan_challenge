@@ -21,3 +21,4 @@ describe('TokenPage', () => {
         cy.get('[data-cy=token-details]').should('be.visible');
     });
 });
+export { }

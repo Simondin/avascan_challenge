@@ -69,3 +69,4 @@ describe('TokenDetails component', () => {
         });
     });
 });
+export { }
